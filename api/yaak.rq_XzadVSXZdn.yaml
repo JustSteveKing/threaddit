@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_XzadVSXZdn
 createdAt: 2025-07-10T09:43:30.285800
-updatedAt: 2025-07-10T09:44:02.114882
+updatedAt: 2025-07-10T10:24:02.395677
 workspaceId: wk_ET5xJNKjEW
 folderId: fl_BoiDiQLaVn
 authentication:
@@ -18,6 +18,6 @@ headers:
   id: xCZ7Qa3nm3
 method: GET
 name: Get Authenticated User
-sortPriority: -1752140411641.0
+sortPriority: -876070205820.5
 url: ${[ BASE_URL ]}/user
 urlParameters: []

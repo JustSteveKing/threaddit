@@ -10,6 +10,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         api: __DIR__ . '/../routes/api/routes.php',
         commands: __DIR__ . '/../routes/console/routes.php',
+        channels: __DIR__ . '/../routes/channels/routes.php',
         health: '/up',
         apiPrefix: '',
     )

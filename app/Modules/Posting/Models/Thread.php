@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Modules\Posting\Models;
 
 use App\Modules\Identity\Models\User;
+use App\Modules\Posting\Observers\ThreadObserver;
 use ArrayObject;
 use Carbon\CarbonInterface;
 use Database\Factories\ThreadFactory;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,6 +26,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property null|CarbonInterface $updated_at
  * @property-read User $user
  */
+#[ObservedBy(classes: ThreadObserver::class)]
 final class Thread extends Model
 {
     /** @use HasFactory<ThreadFactory> */
