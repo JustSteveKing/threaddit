@@ -1,0 +1,31 @@
+type: http_request
+model: http_request
+id: rq_bG8HUZFkYP
+createdAt: 2025-07-10T09:48:27.090419
+updatedAt: 2025-07-10T09:57:05.245447
+workspaceId: wk_ET5xJNKjEW
+folderId: fl_dpFiGtWksA
+authentication:
+  token: ${[ CURRENT_TOKEN ]}
+authenticationType: bearer
+body: {}
+bodyType: null
+description: ''
+headers:
+- enabled: true
+  name: Accept
+  value: application/json
+  id: wD9m2EfAJd
+method: GET
+name: Get all threads
+sortPriority: -1752140411641.0
+url: ${[ BASE_URL ]}/threads
+urlParameters:
+- enabled: true
+  name: filter[handle]
+  value: juststeveking
+  id: CRgeuckGn7
+- enabled: true
+  name: ''
+  value: ''
+  id: KwzdRR4s0a

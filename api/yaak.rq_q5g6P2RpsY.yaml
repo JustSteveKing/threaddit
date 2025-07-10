@@ -1,0 +1,31 @@
+type: http_request
+model: http_request
+id: rq_q5g6P2RpsY
+createdAt: 2025-07-10T10:12:50.738344
+updatedAt: 2025-07-10T10:13:44.660807
+workspaceId: wk_ET5xJNKjEW
+folderId: fl_dpFiGtWksA
+authentication:
+  token: ${[ CURRENT_TOKEN ]}
+authenticationType: bearer
+body:
+  text: |-
+    {
+      "body": "This is a test thread including a link https://juststeveking.link"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Accept
+  value: application/json
+  id: JvwS0bJ5MQ
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: wXvKPzg0WH
+method: POST
+name: Create a new thread
+sortPriority: -1752142370737.0
+url: ${[ BASE_URL ]}/threads
+urlParameters: []

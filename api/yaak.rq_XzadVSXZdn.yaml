@@ -1,0 +1,23 @@
+type: http_request
+model: http_request
+id: rq_XzadVSXZdn
+createdAt: 2025-07-10T09:43:30.285800
+updatedAt: 2025-07-10T09:44:02.114882
+workspaceId: wk_ET5xJNKjEW
+folderId: fl_BoiDiQLaVn
+authentication:
+  token: ${[ CURRENT_TOKEN ]}
+authenticationType: bearer
+body: {}
+bodyType: null
+description: ''
+headers:
+- enabled: true
+  name: Accept
+  value: application/json
+  id: xCZ7Qa3nm3
+method: GET
+name: Get Authenticated User
+sortPriority: -1752140411641.0
+url: ${[ BASE_URL ]}/user
+urlParameters: []

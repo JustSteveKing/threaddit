@@ -1,0 +1,31 @@
+type: http_request
+model: http_request
+id: rq_Jb7KxGvRDq
+createdAt: 2025-07-10T09:40:11.642751
+updatedAt: 2025-07-10T09:43:35.845110
+workspaceId: wk_ET5xJNKjEW
+folderId: fl_BoiDiQLaVn
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "email": "juststevemcd@gmail.com",
+      "password": "password"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Accept
+  value: application/json
+  id: TgFzAnN6RZ
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: A6A4Zb3ChB
+method: POST
+name: Login
+sortPriority: -1752140411641.0
+url: ${[ BASE_URL ]}/auth/login
+urlParameters: []
