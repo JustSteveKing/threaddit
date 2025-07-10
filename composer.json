@@ -11,17 +11,21 @@
   "require": {
     "php": "^8.4",
     "laravel/framework": "^12.20",
+    "laravel/sanctum": "^4.0",
     "laravel/tinker": "^2.10.1"
   },
   "require-dev": {
     "fakerphp/faker": "^1.24.1",
+    "larastan/larastan": "^3.5",
     "laravel/pail": "^1.2.3",
     "laravel/pint": "^1.23",
     "laravel/sail": "^1.43.1",
     "mockery/mockery": "^1.6.12",
     "nunomaduro/collision": "^8.8.2",
     "pestphp/pest": "^3.8.2",
-    "pestphp/pest-plugin-laravel": "^3.2"
+    "pestphp/pest-plugin-laravel": "^3.2",
+    "phpstan/phpstan": "^2.1",
+    "roave/security-advisories": "dev-latest"
   },
   "autoload": {
     "psr-4": {
@@ -53,7 +57,16 @@
     ],
     "dev": [
       "Composer\\Config::disableProcessTimeout",
-      "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+      "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" --names=server,queue,logs"
+    ],
+    "lint": [
+      "./vendor/bin/pint --test"
+    ],
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "stan": [
+      "./vendor/bin/phpstan analyse --memory-limit=-1"
     ],
     "test": [
       "@php artisan config:clear --ansi",
