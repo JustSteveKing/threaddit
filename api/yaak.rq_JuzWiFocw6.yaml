@@ -1,8 +1,8 @@
 type: http_request
 model: http_request
-id: rq_bG8HUZFkYP
-createdAt: 2025-07-10T09:48:27.090419
-updatedAt: 2025-07-16T10:55:55.312661
+id: rq_JuzWiFocw6
+createdAt: 2025-07-16T11:00:42.061801
+updatedAt: 2025-07-16T11:13:11.594346
 workspaceId: wk_ET5xJNKjEW
 folderId: fl_dpFiGtWksA
 authentication:
@@ -17,15 +17,19 @@ headers:
   value: application/json
   id: wD9m2EfAJd
 method: GET
-name: Get all threads
-sortPriority: -1752140411641.0
-url: ${[ BASE_URL ]}/threads
+name: Fetch a Thread
+sortPriority: -1752140411640.999
+url: ${[ BASE_URL ]}/threads/01k09ezzyh97mdkvp6vh9bv0ty
 urlParameters:
 - enabled: false
   name: filter[handle]
   value: juststeveking
   id: CRgeuckGn7
 - enabled: true
+  name: include
+  value: user
+  id: NUEKs0UG7K
+- enabled: true
   name: ''
   value: ''
-  id: NXJhQE9nDR
+  id: fFWPhvuZ0u

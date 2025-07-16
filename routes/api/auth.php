@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Modules\Identity\Controllers;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('login', Controllers\LoginController::class)->name('login');
+Route::post('login', LoginController::class)->name('login');
 

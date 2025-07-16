@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Modules\Identity\Controllers\AuthenticatedUserController;
+use App\Http\Controllers\Auth\AuthenticatedUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->as('auth:')->group(base_path(

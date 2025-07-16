@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_q5g6P2RpsY
 createdAt: 2025-07-10T10:12:50.738344
-updatedAt: 2025-07-10T10:33:05.184518
+updatedAt: 2025-07-16T11:26:39.502015
 workspaceId: wk_ET5xJNKjEW
 folderId: fl_dpFiGtWksA
 authentication:
@@ -11,7 +11,7 @@ authenticationType: bearer
 body:
   text: |-
     {
-      "body": "This is a test thread for funsies."
+      "body": "Check this out: https://www.juststeveking.com/"
     }
 bodyType: application/json
 description: ''

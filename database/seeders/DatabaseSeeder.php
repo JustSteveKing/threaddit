@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Identity\Enums\Status;
-use App\Modules\Identity\Models\User;
+use App\Enums\Status;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 final class DatabaseSeeder extends Seeder

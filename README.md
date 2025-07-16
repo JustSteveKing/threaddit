@@ -7,3 +7,8 @@
 
 ## Threaddit - an API only social network
 
+## Domains
+
+- Identity
+- Posting
+- Community

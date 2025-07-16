@@ -17,6 +17,7 @@ return new class () extends Migration {
             $table->jsonb('meta')->nullable()->comment('Miscellaneous information for the thread.'); // links, tags, other random stuff
 
             $table->unsignedBigInteger('reactions')->default(0)->comment('How many reactions this thread has received.');
+            $table->unsignedBigInteger('views')->default(0)->comment('How many times this thread has been viewed.');
 
             $table
                 ->foreignUlid('user_id')
