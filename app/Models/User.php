@@ -34,6 +34,7 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @property-read Collection<int,PersonalAccessToken> $tokens
  * @property-read null|PersonalAccessToken $currentAccessToken
  * @property-read Collection<int,Thread> $threads
+ * @property-read Collection<int,Reply> $replies
  */
 final class User extends Authenticatable implements MustVerifyEmail
 {
@@ -56,6 +57,13 @@ final class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at',
     ];
 
+    /** @var list<string|class-string> */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+        'status' => Status::class,
+    ];
+
     /** @var list<string> */
     protected $hidden = [
         'password',
@@ -70,14 +78,12 @@ final class User extends Authenticatable implements MustVerifyEmail
         );
     }
 
-    /** @return array<string,string|class-string> */
-    protected function casts(): array
+    public function replies(): HasMany
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-            'status' => Status::class,
-        ];
+        return $this->hasMany(
+            related: Reply::class,
+            foreignKey: 'user_id',
+        )->orderBy('created_at', 'desc');
     }
 
     public static function newFactory(): UserFactory

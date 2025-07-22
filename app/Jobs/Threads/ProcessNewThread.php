@@ -33,6 +33,10 @@ final class ProcessNewThread implements ShouldQueue
             matches: $urls,
         );
 
+        if (empty($urls)) {
+            return;
+        }
+
         foreach ($urls as $url) {
             $url = $url[0]; // Get the first match from the array
             $unfurledData = $this->unfurl($url);

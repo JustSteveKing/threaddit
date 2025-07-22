@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_JuzWiFocw6
 createdAt: 2025-07-16T11:00:42.061801
-updatedAt: 2025-07-16T11:13:11.594346
+updatedAt: 2025-07-22T10:23:43.428838
 workspaceId: wk_ET5xJNKjEW
 folderId: fl_dpFiGtWksA
 authentication:
@@ -19,7 +19,7 @@ headers:
 method: GET
 name: Fetch a Thread
 sortPriority: -1752140411640.999
-url: ${[ BASE_URL ]}/threads/01k09ezzyh97mdkvp6vh9bv0ty
+url: ${[ BASE_URL ]}/threads/01k0rqgebmxhjnzmf84gnnvkqz
 urlParameters:
 - enabled: false
   name: filter[handle]
@@ -32,4 +32,4 @@ urlParameters:
 - enabled: true
   name: ''
   value: ''
-  id: fFWPhvuZ0u
+  id: C2hcGVbCeU

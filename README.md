@@ -5,7 +5,7 @@
 </p>
 
 
-## Threaddit - an API only social network
+## Threaddit: an API only social network
 
 ## Domains
 

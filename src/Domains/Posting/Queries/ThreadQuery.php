@@ -16,7 +16,7 @@ final class ThreadQuery
         return QueryBuilder::for(
             subject: $query ?? Thread::query(),
         )->allowedIncludes(
-            includes: ['user'],
+            includes: ['user', 'replies'],
         )->allowedFilters(
             filters: [
                 AllowedFilter::exact(

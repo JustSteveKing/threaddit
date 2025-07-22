@@ -1,0 +1,31 @@
+type: http_request
+model: http_request
+id: rq_8QmeudosR7
+createdAt: 2025-07-22T08:56:02.843055
+updatedAt: 2025-07-22T09:30:27.862185
+workspaceId: wk_ET5xJNKjEW
+folderId: fl_YGvYcbe8Pk
+authentication:
+  token: ${[ CURRENT_TOKEN ]}
+authenticationType: bearer
+body:
+  text: |-
+    {
+      "body": "I am replying to myself"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Accept
+  value: application/json
+  id: JvwS0bJ5MQ
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: wXvKPzg0WH
+method: POST
+name: Reply to a thread
+sortPriority: 0.0
+url: ${[ BASE_URL ]}/threads/01k0rqgebmxhjnzmf84gnnvkqz/replies
+urlParameters: []

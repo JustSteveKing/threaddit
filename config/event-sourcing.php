@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use Threaddit\Domains\Posting\Events\ThreadWasCreated;
-use Threaddit\Domains\Posting\Events\ThreadWasViewed;
+use Threaddit\Domains\Posting\Events;
 
 return [
 
@@ -100,8 +99,9 @@ return [
      * of your events but still handle older events correctly.
      */
     'event_class_map' => [
-        'thread.created' => ThreadWasCreated::class,
-        'thread.viewed' => ThreadWasViewed::class,
+        'thread.created' => Events\ThreadWasCreated::class,
+        'thread.viewed' => Events\ThreadWasViewed::class,
+        'thread.replied' => Events\ThreadWasReplied::class,
     ],
 
     /*

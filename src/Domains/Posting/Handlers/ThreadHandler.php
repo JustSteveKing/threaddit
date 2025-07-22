@@ -6,6 +6,7 @@ namespace Threaddit\Domains\Posting\Handlers;
 
 use Spatie\EventSourcing\EventHandlers\Projectors\Projector;
 use Threaddit\Domains\Posting\Events\ThreadWasCreated;
+use Threaddit\Domains\Posting\Events\ThreadWasReplied;
 use Threaddit\Domains\Posting\Events\ThreadWasViewed;
 use Threaddit\Domains\Posting\Repositories\ThreadsRepository;
 use Throwable;
@@ -32,6 +33,13 @@ final class ThreadHandler extends Projector
     {
         $this->repository->increaseViewCount(
             threadId: $event->thread,
+        );
+    }
+
+    public function onThreadWasReplied(ThreadWasReplied $event): void
+    {
+        $this->repository->replyToThread(
+            reply: $event->reply,
         );
     }
 }

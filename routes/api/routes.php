@@ -14,6 +14,10 @@ Route::middleware(['auth:sanctum'])->group(static function (): void {
         path: 'routes/api/threads.php',
     ));
 
+    Route::prefix('threads/{thread}/replies')->as('threads:replies:')->group(base_path(
+        path: 'routes/api/replies.php',
+    ));
+
 
     Route::get('/user', AuthenticatedUserController::class);
 });

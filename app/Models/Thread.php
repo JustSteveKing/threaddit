@@ -10,10 +10,12 @@ use Carbon\CarbonInterface;
 use Database\Factories\ThreadFactory;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property string $id
@@ -25,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property null|CarbonInterface $created_at
  * @property null|CarbonInterface $updated_at
  * @property-read User $user
+ * @property-read Collection<int,Reply> $replies
  */
 #[ObservedBy(classes: ThreadObserver::class)]
 final class Thread extends Model
@@ -42,6 +45,13 @@ final class Thread extends Model
         'user_id',
     ];
 
+    /** @var list<string|class-string> */
+    protected $casts = [
+        'meta' => AsArrayObject::class,
+        'reactions' => 'integer',
+        'views' => 'integer',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(
@@ -50,13 +60,11 @@ final class Thread extends Model
         );
     }
 
-    /** @return array<string,string> */
-    protected function casts(): array
+    public function replies(): HasMany
     {
-        return [
-            'meta' => AsArrayObject::class,
-            'reactions' => 'integer',
-            'views' => 'integer',
-        ];
+        return $this->hasMany(
+            related: Reply::class,
+            foreignKey: 'thread_id',
+        )->orderBy('created_at', 'desc');
     }
 }
